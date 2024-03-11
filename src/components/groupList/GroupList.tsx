@@ -13,6 +13,9 @@ import {
   SimpleCell,
   Switch,
   Avatar,
+  Counter,
+  IconButton,
+  Button,
 } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
 
@@ -49,6 +52,18 @@ const GroupList = () => {
                         size={40}
                         style={{ backgroundColor: `${group.avatar_color}` }}
                       />
+                    }
+                    after={
+                      <Button
+                        mode="tertiary"
+                        after={
+                          <Counter size="s">
+                            {group.friends ? group.friends?.length : 0}
+                          </Counter>
+                        }
+                      >
+                        Друзья
+                      </Button>
                     }
                     expandable="auto"
                     subtitle={`участников ${group.members_count}`}
