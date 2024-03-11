@@ -14,10 +14,8 @@ const useFetch = (url: string) => {
         const response = await fetch(url);
         const result: GetGroupsResponse = await response.json();
 
-        console.log(result.result);
-
-        if (result.result === 1) {
-          setGroups(result.data || []);
+        if (Array.isArray(result)) {
+          setGroups(result || []);
         } else {
           setError("Failed to fetch data");
         }
