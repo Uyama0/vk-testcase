@@ -27,8 +27,6 @@ const useFetch = (url: string) => {
     };
 
     fetchGroups();
-
-    console.log(groups);
   }, [url]);
 
   return { groups, loading, error };
