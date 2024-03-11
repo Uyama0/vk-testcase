@@ -1,7 +1,9 @@
+import GroupList from "./components/groupList/GroupList";
+
 function App() {
   return (
     <>
-      <div></div>
+      <GroupList />
     </>
   );
 }
